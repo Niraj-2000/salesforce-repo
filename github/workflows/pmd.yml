@@ -1,0 +1,22 @@
+name: Run PMD
+
+on:
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  pmd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install PMD
+        run: |
+          wget https://github.com/pmd/pmd/releases/download/pmd_releases/6.55.0/pmd-bin-6.55.0.zip
+          unzip pmd-bin-6.55.0.zip
+      - name: Run PMD
+        run: |
+          ./pmd-bin-6.55.0/bin/run.sh pmd \
+          -d force-app \
+          -R pmd/ruleset.xml \
+          -f text

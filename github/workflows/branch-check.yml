@@ -1,0 +1,17 @@
+name: Validate Branch Name
+
+on:
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate Branch
+        run: |
+          if [[ ! "${{ github.head_ref }}" =~ AB-[0-9]+ ]]; then
+            echo "Branch must contain AB-XXXX"
+            exit 1
+          fi

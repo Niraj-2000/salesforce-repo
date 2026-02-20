@@ -50,7 +50,7 @@ jobs:
             echo "❌ ERROR:"
             echo "PR title must contain:"
             echo " - Copado ticket in UPPERCASE like US-0000015"
-            echo " - Azure ticket like AB#1234"
+            echo " - Azure ticket likes AB#1234"
             echo ""
             echo "Correct example:"
             echo "feat: add payment validation US-0000015 AB#1234"

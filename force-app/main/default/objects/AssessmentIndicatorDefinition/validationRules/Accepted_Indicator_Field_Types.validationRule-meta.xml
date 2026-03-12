@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accepted_Indicator_Field_Types</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT( ISPICKVAL( DataType , &apos;Boolean&apos;) || ISPICKVAL( DataType , &apos;String&apos;) || ISPICKVAL( DataType , &apos;Picklist&apos;) || ISPICKVAL( DataType , &apos;Multi-Select Picklist&apos;))</errorConditionFormula>
+    <errorDisplayField>DataType</errorDisplayField>
+    <errorMessage>Only Boolean, Text, Picklist and Multi-Select Picklist are supported at this time for Indicator Field Type</errorMessage>
+</ValidationRule>
